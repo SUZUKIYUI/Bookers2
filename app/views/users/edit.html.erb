@@ -1,2 +1,11 @@
-<h1>Users#edit</h1>
-<p>Find me in app/views/users/edit.html.erb</p>
+<h1>User info</h1>
+<%= form_with model:@user,local: true do |f| %>
+  <lavel for="name">Name</lavel>
+  <%= f.text_field :name, id:"name" %>
+  <%= attachment_image_tag @user, :profile_image, :fill, 60, 60 %>
+  <label for="image">Image</label>
+  <%= f.attachment_field :profile_image,placeholder:"プロフィール画像" %>
+  <label for="introduction">Introduction</label>
+  <%= f.text_area :introduction,id:"introduction" %>
+  <%= f.submit "Update User" %>
+<% end %>
