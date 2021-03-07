@@ -1,3 +1,8 @@
+<!--新規投稿成功時のフラッシュメッセージ-->
+<% if flash[:notice] %>
+  <%= flash[:notice] %>
+<% end %>
+
 <!---------------------------左画面---------------------------->
 <%= render "users/user_info_and_new_book", new_book:@new_book %>
 
