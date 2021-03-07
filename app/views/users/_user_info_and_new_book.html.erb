@@ -1,8 +1,10 @@
 <!-----------------------右画面(元になるview)----------------------->
 <h1>User info</h1>
-<%=%>
-<%=%>
-<%=%>
+<%= attachment_image_tag user_info, :profile_image, :fill, 60, 60 %>
+<p>name</p>
+<%= user_info.name %>
+<p>introduction</p>
+<%= user_info.introduction %>
 <%= link_to "👦", edit_user_path(current_user.id) %>
 
 
