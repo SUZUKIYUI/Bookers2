@@ -1,3 +1,10 @@
 <%= render "users/user_info_and_new_book", new_book:@new_book %>
 
-
+<h1>Books</h1>
+<% @books.each do |book| %>
+  <%= attachment_image_tag book.user, :profile_image, :fill, 60, 60 %>
+  <p>Title</p>
+  <%= link_to book.title, book_path(book.user.id) %>
+  <p>Opinion</p>
+  <%= book.body %>
+<% end %>
