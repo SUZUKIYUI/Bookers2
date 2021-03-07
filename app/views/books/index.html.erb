@@ -4,7 +4,7 @@
 <% @books.each do |book| %>
   <%= attachment_image_tag book.user, :profile_image, :fill, 60, 60 %>
   <p>Title</p>
-  <%= link_to book.title, book_path(book.user.id) %>
+  <%= link_to book.title, book_path(book.id) %>
   <p>Opinion</p>
   <%= book.body %>
 <% end %>

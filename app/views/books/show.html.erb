@@ -7,7 +7,7 @@
 <%= @book.body %>
 
 <!--編集・削除ボタン-->
-<% if @book.user == current_user %>
+<% if @book.user.id == current_user.id %>
   <%= link_to "Edit", edit_book_path(@book.id) %>
-  <%= link_to "Destroy", book_path(@book.id), mathod: :delete %>
+  <%= link_to "Destroy", book_path(@book.id), method: :delete %>
 <% end %>
