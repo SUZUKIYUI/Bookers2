@@ -5,6 +5,7 @@ class BooksController < ApplicationController
   end
 
   def create
+    @user_info=current_user
     @books=Book.all
     @book=Book.new(book_params)
     @book.user_id=current_user.id

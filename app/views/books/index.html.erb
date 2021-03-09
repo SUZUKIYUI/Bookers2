@@ -1,13 +1,13 @@
-<!--------------------新規投稿失敗時のエラーメッセージ--------------------->
+<!--------------------------------投稿失敗時のエラーメッセージ------------------------------------>
 <% if @book.errors.any? %>
-  <%= "#{@book.errors.count} error prohibited this obj from being saved:" %>
+  <h2 class="text-danger"><%= @book.errors.count %>error prohibited this obj from being saved:</h2>
   <% @book.errors.full_messages.each do |error| %>
-    <ul>
-      <li><%= error %></li>
+    <ul class="my-0">
+      <li class="text-danger ml-5"><%= error %></li>
     </ul>
   <% end %>
 <% end %>
-<!------------------------------------------------------------------------->
+<!------------------------------------------------------------------------------------------------>
 
 <div class="row">
   <!---------------------------左画面---------------------------->

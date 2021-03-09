@@ -1,11 +1,17 @@
-<h1>User info</h1>
-<%= form_with model:@user,local: true do |f| %>
-  <lavel for="name">Name</lavel>
-  <%= f.text_field :name, id:"name" %>
-  <%= attachment_image_tag @user, :profile_image, :fill, 80, 80, format: "jpeg", fallback: "no_image.jpg", size:"80x80" %>
-  <label for="image">Image</label>
-  <%= f.attachment_field :profile_image,placeholder:"プロフィール画像" %>
-  <label for="introduction">Introduction</label>
-  <%= f.text_area :introduction,id:"introduction" %>
-  <%= f.submit "Update User" %>
-<% end %>
+<div class="row">
+  <div class="col-lg-3"></div>
+  <div class="col-lg-6 d-flex flex-column">
+    <h1>User info</h1>
+    <%= form_with model:@user,local: true do |f| %>
+      <%= f.label :name, "Name" %>
+      <%= f.text_field :name, class:"w-100 px-2 py-1" %>
+      <%= attachment_image_tag @user, :profile_image, :fill, 80, 80, format: "jpeg", fallback: "no_image.jpg", size:"80x80" %>
+      <%= f.label :profile_image, "Image" %>
+      <%= f.attachment_field :profile_image,placeholder:"プロフィール画像" %>
+      <%= f.label :introduction, "Introduction" %>
+      <%= f.text_area :introduction, class:"w-100 px-2 py-1" %>
+      <%= f.submit "Update User", class:"btn btn-success" %>
+    <% end %>
+  </div>
+  <div class="col-lg-3"></div>
+</div>
