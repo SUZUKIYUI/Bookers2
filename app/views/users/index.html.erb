@@ -1,13 +1,21 @@
-<!---------------------------左画面---------------------------->
-<%= render "users/user_info_and_new_book", new_book:@new_book, user_info:@user_info %>
+<div class="row">
+  <!---------------------------左画面---------------------------->
+  <div class="col-lg-3">
+    <%= render "users/user_info_and_new_book", new_book:@new_book, user_info:@user_info %>
+  </div>
 
+  <div class="col-lg-1">
+  </div>
 
-<!-------------------------右画面------------------------------->
-<h1>Users</h1>
-<% @users.each do |user| %>
-  <p>image</p>
-  <%= attachment_image_tag user, :profile_image, :fill, 60, 60 %>
-  <p>name</p>
-  <%= user.name %>
-  <%= link_to "show", user_path(user.id) %>
-<% end %>
+  <!-------------------------右画面------------------------------->
+  <div class="col-lg-8">
+    <h1>Users</h1>
+    <% @users.each do |user| %>
+      <p>image</p>
+      <%= attachment_image_tag user, :profile_image, :fill, 60, 60 %>
+      <p>name</p>
+      <%= user.name %>
+      <%= link_to "show", user_path(user.id) %>
+    <% end %>
+  </div>
+</div>
