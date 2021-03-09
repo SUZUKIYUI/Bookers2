@@ -1,7 +1,7 @@
 <!-----------------------右画面(元になるview)----------------------->
 <div>
   <h1>User info</h1>
-  <%= attachment_image_tag user_info, :profile_image, :fill, 60, 60 %>
+  <%= attachment_image_tag user_info, :profile_image, :fill, 80, 80, format: "jpeg", fallback: "no_image.jpg", size:"80x80" %>
   <table class="table mt-3">
     <tr>
       <th>name</th>
@@ -31,6 +31,6 @@
       <%= f.label :body, "Opinion" %><br/>
       <%= f.text_area :body %>
     </div>
-      <%= f.submit "Create Book", type:"button", class:"btn btn-success" %>
+      <%= f.submit "Create Book", class:"btn btn-success" %>
   <% end %>
 </div>

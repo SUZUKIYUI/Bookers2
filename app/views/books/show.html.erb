@@ -10,7 +10,7 @@
   <!---------------------------右画面---------------------------------->
   <div class="col-lg-8">
     <h1>Book detail</h1>
-    <%= attachment_image_tag @book.user, :profile_image, :fill, 60, 60 %>
+    <%= attachment_image_tag @book.user, :profile_image, :fill,40, 40, format: "jpeg", fallback: "no_image.jpg", size:"40x40" %>
     <%= link_to @book.user.name, user_path(@book.user.id) %>
     <%= link_to @book.title, book_path(@book.id) %>
     <%= @book.body %>
