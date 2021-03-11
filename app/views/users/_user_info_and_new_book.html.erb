@@ -1,18 +1,18 @@
 <!-----------------------右画面(元になるview)----------------------->
 <div>
   <h1>User info</h1>
-  <%= attachment_image_tag user_info, :profile_image, :fill, 80, 80, format: "jpeg", fallback: "no_image.jpg", size:"80x80" %>
+  <%= attachment_image_tag user, :profile_image, :fill, 80, 80, format: "jpeg", fallback: "no_image.jpg", size:"80x80" %>
   <table class="table mt-3">
     <tr>
       <th>name</th>
-      <th><%= user_info.name %></th>
+      <th><%= user.name %></th>
     </tr>
     <tr>
       <th>introduction</th>
-      <th><%= user_info.introduction %></th>
+      <th><%= user.introduction %></th>
     </tr>
   </table>
-  <%= link_to edit_user_path(current_user.id) do %>
+  <%= link_to edit_user_path(user.id) do %>
     <button type="button" class="btn btn-outline-secondary w-100 py-0">
       <i class="fas fa-user-cog"></i>
     </button>

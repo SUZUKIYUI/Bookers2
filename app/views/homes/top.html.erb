@@ -1,11 +1,36 @@
-<h1>welcome to Bookers !!</h1>
-<p>In Bookers,<br/>
+<div class="row">
+  <div class="col-lg-2"></div>
+  <div class="col-lg-8 w-100">
+    <h1>welcome to <i class="fas fa-book"></i><strong>Bookers</strong> !!</h1>
+    <p>In <i class="fas fa-book"></i><strong>Bookers</strong>,<br/>
 
-  you can share and exchange your opinions , inpressions , and emotions<br/>
+      you can share and exchange your opinions , inpressions , and emotions<br/>
 
-  about various books!<br/>
-</p>
-<%= link_to "Log in", new_user_session_path, class: "post" %>
-<%= link_to "Sign up", new_user_registration_path, class: "post" %>
-
-
+      about various books!<br/>
+    </p>
+  </div>
+  <div class="col-lg-2"></div>
+</div>
+<div class="row w-100">
+  <div class="col-lg-3"></div>
+  <% if user_signed_in? %>
+    <div class="col-lg-6 px-0">
+      <div class="mb-3">
+        <%= link_to "Log in", user_path(current_user.id), class:"btn btn-info w-100 py-0" %>
+      </div>
+      <div>
+        <%= link_to "Sign up", user_path(current_user.id), class:"btn btn-success w-100 py-0" %>
+      </div>
+    </div>
+  <% else %>
+    <div class="col-lg-6 px-0">
+      <div class="mb-3 w-100">
+        <%= link_to "Log in", new_user_session_path, class:"btn btn-info w-100 py-0" %>
+      </div>
+      <div>
+        <%= link_to "Sign up", new_user_registration_path, class:"btn btn-success w-100 py-0" %>
+      </div>
+    </div>
+  <% end %>
+  <div class="col-lg-3"></div>
+</div>
